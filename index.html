@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accidents Visualization</title>
+    <style>
+        #chart-container {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="chart-container">
+    <canvas id="myChart"></canvas>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ["2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016"],
+            datasets: [{
+                label: "Andhra Pradesh",
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [47477, 50895, 46613, 58520, 59213, 58741, 52157, 53928, 55583, 51552, 49970, 29931, 29439, 30051],
+                fill: false,
+            }, {
+                label: "Arunachal Pradesh",
+                backgroundColor: 'rgb(256, 26, 29)',
+                borderColor: 'rgb(256, 26, 29)',
+                data: [374, 419, 330, 361, 488, 425, 530, 491, 438, 399, 405, 308, 359, 391],
+                fill: false,
+            }, {
+                label: "Assam",
+                backgroundColor: 'rgb(250, 26, 192)',
+                borderColor: 'rgb(250, 26, 192)',
+                data: [4361, 4313, 5540, 5435, 5697, 5081, 5522, 7579, 6505, 6709, 6609, 6499, 7068, 6127],
+                fill: false,
+            }, {
+                label: "Bihar",
+                backgroundColor: 'rgb(0, 0, 0)',
+                borderColor: 'rgb(0, 0, 0)',
+                data: [4227, 2664, 2559, 3578, 5971, 6359, 7113, 8106, 7083, 7142, 7086, 6640, 6835, 5651],
+                fill: false,
+            }, {
+                label: "Chhattisgarh",
+                backgroundColor: 'rgb(244, 193, 8)',
+                borderColor: 'rgb(244, 193, 8)',
+                data: [8732, 9897, 10378, 11208, 11735, 12873, 13274, 13599, 13929, 13517, 12503, 13157, 13426, 12955],
+                fill: false,
+            }, {
+                label: "Goa",
+                backgroundColor: 'rgb(121, 244, 8)',
+                borderColor: 'rgb(121, 244, 8)',
+                data: [2626, 2730, 2714, 2931, 3128, 3167, 2954, 2709, 2318, 2086, 1928, 1879, 2055, 2026],
+                fill: false,
+            }, {
+                label: "Gujarat",
+                backgroundColor: 'rgb(8, 38, 147)',
+                borderColor: 'rgb(8, 38, 147)',
+                data: [33680, 34436, 34901, 33984, 35768, 35722, 32944, 32449, 29744, 27650, 24836, 22493, 21448, 19949],
+                fill: false,
+            }, {
+                label: "Haryana",
+                backgroundColor: 'rgb(8, 255, 255)',
+                borderColor: 'rgb(8, 255, 255)',
+                data: [8287, 8643, 8773, 9118, 10288, 10570, 10481, 9905, 9727, 9452, 9143, 8944, 10794, 10531],
+                fill: false,
+            }, {
+                label: "Himachal Pradesh",
+                backgroundColor: 'rgb(24, 92, 92)',
+                borderColor: 'rgb(24, 92, 92)',
+                data: [4358, 4975, 4507, 4879, 5332, 4714, 5579, 5325, 5462, 5248, 5081, 5576, 5108, 5764],
+                fill: false,
+            }, {
+                label: "Jammu & Kashmir",
+                backgroundColor: 'rgb(24, 92, 29)',
+                borderColor: 'rgb(24, 92, 29)',
+                data: [8056, 8889, 8315, 8219, 7920, 7597, 8199, 8726, 10012, 9755, 8681, 8043, 8142, 7692],
+                fill: false,
+            }, {
+                label: "Jharkhand",
+                backgroundColor: 'rgb(82, 92, 24)',
+                borderColor: 'rgb(82, 92, 24)',
+                data: [4106, 4293, 3520, 3707, 4369, 4373, 4406, 4872, 4811, 4974, 4356, 4356, 4038, 3793],
+                fill: false,
+            }, {
+                label: "Karnataka",
+                backgroundColor: 'rgb(140, 236, 227)',
+                borderColor: 'rgb(140, 236, 227)',
+                data: [45781, 50395, 54061, 60940, 61438, 63314, 61697, 61774, 59591, 58659, 56781, 56831, 56971, 54556],
+                fill: false,
+            }, {
+                label: "Kerala",
+                backgroundColor: 'rgb(212, 140, 236)',
+                borderColor: 'rgb(212, 140, 236)',
+                data: [48640, 51228, 51217, 49799, 48246, 43857, 41402, 41473, 41379, 41915, 40346, 41096, 43735, 44108],
+                fill: false,
+            }, {
+                label: "Madhya Pradesh",
+                backgroundColor: 'rgb(236, 140, 145)',
+                borderColor: 'rgb(236, 140, 145)',
+                data: [33375, 37250, 39719, 42639, 45225, 51054, 54611, 56897, 55545, 55994, 55731, 55335, 55815, 57873],
+                fill: false,
+            }, {
+                label: "Maharashtra",
+                backgroundColor: 'rgb(153, 124, 143)',
+                borderColor: 'rgb(153, 124, 143)',
+                data: [46692, 47394, 40838, 51024, 47342, 52780, 47878, 46985, 45628, 43847, 41972, 40455, 39606, 35884],
+                fill: false,
+            }, {
+                label: "Manipur",
+                backgroundColor: 'rgb(124, 129, 153)',
+                borderColor: 'rgb(124, 129, 153)',
+                data: [988, 1090, 1335, 1020, 1044, 1216, 1189, 1132, 1118, 1391, 1175, 1295, 1201, 955],
+                fill: false,
+            }, {
+                label: "Meghalaya",
+                backgroundColor: 'rgb(124, 153, 152)',
+                borderColor: 'rgb(124, 153, 152)',
+                data: [523, 362, 543, 379, 357, 355, 713, 461, 591, 322, 412, 311, 319, 354],
+                fill: false,
+            }, {
+                label: "Mizoram",
+                backgroundColor: 'rgb(139, 196, 95)',
+                borderColor: 'rgb(139, 196, 95)',
+                data: [112, 131, 127, 149, 65, 185, 203, 252, 215, 172, 264, 234, 103, 68],
+                fill: false,
+            }, {
+                label: "Nagaland",
+                backgroundColor: 'rgb(171, 196, 95)',
+                borderColor: 'rgb(171, 196, 95)',
+                data: [123, 140, 307, 275, 189, 245, 151, 121, 107, 49, 65, 230, 74, 120],
+                fill: false,
+            }, {
+                label: "Odisha",
+                backgroundColor: 'rgb(196, 160, 95)',
+                borderColor: 'rgb(196, 160, 95)',
+                data: [8838, 9498, 10160, 9763, 11305, 10378, 11296, 11399, 11248, 10715, 11254, 11087, 11825, 11312],
+                fill: false,
+            }, {
+                label: "Punjab",
+                backgroundColor: 'rgb(196, 128, 95)',
+                borderColor: 'rgb(196, 128, 95)',
+                data: [4077, 4218, 4131, 4307, 4430, 4196, 4486, 4071, 4081, 3997, 4383, 4127, 4414, 4351],
+                fill: false,
+            }, {
+                label: "Rajasthan",
+                backgroundColor: 'rgb(151, 24, 24)',
+                borderColor: 'rgb(151,24,24)',
+                data: [29079, 31345, 29986, 29434, 31151, 30857, 32317, 31033, 28666, 28135, 27424, 27453, 26153, 24103],
+                fill: false,
+            }, {
+                label: "Sikkim",
+                backgroundColor: 'rgb(151, 20, 24)',
+                borderColor: 'rgb(151,20,24)',
+                data: [279, 278, 436, 391, 272, 246, 434, 399, 321, 336, 409, 352, 337, 263],
+                fill: false,
+            }, {
+                label: "Uttarakhand",
+                backgroundColor: 'rgb(96, 151, 24)',
+                borderColor: 'rgb(96,151,24)',
+                data: [1692, 1870, 1841, 1910, 1979, 1765, 1784, 1656, 1712, 1577, 1277, 1225, 1028, 853],
+                fill: false,
+            }, {
+                label: "Uttar Pradesh",
+                backgroundColor: 'rgb(151, 118, 24)',
+                borderColor: 'rgb(151, 118, 24)',
+                data: [9348, 13188, 12883, 13650, 14464, 18056, 20632, 20113, 15513, 22155, 1503, 1531, 1657, 1735],
+                fill: false,
+            }, {
+                label: "West Bengal",
+                backgroundColor: 'rgb(151, 118, 24)',
+                borderColor: 'rgb(151, 118, 24)',
+                data: [9348, 13188, 12883, 13650, 14464, 18056, 20632, 20113, 15513, 22155, 1503, 1531, 1657, 1735],
+                fill: false,
+            }, {
+                label: "Delhi",
+                backgroundColor: 'rgb(151, 151, 151)',
+                borderColor: 'rgb(151, 151, 151)',
+                data: [7829, 8072, 8447, 8280, 7711, 7343, 6936, 7108, 7226, 6633, 75, 49, 64, 102],
+                fill: false,
+            }],
+
+        },
+
+        // Configuration options go here
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Road Accidents India'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Year'
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Number of accidents'
+                    },
+                    ticks: {
+                        min: 0,
+                        max: 65000,
+
+                        // forces step size to be 5 units
+                        stepSize: 2500
+                    }
+                }]
+            }
+        }
+    });
+</script>
+</html>
